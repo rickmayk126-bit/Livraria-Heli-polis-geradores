@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orbe | Estereogramas 3D</title>
+
+    <link rel="stylesheet" href="web.css">
+    <script src="autostereogram.js"></script>
+</head>
+
+<body onload="run()">
+
+    <header class="cabecalho">
+        <h1>ORBE</h1>
+        <p>Descubra o que está além da imagem.</p>
+    </header>
+
+    <nav class="navegacao">
+        <a href="#inicio">Início</a>
+        <a href="#gerador">Gerador</a>
+        <a href="#padroes">Galeria</a>
+    </nav>
+
+    <section class="apresentacao" id="inicio">
+        <p class="etiqueta">ILUSÕES DE ÓPTICA</p>
+        <h2>Uma imagem. Uma nova dimensão.</h2>
+        <p>
+            Explore os estereogramas e descubra imagens
+            tridimensionais escondidas em padrões repetidos.
+        </p>
+    </section>
+
+    <section class="conteudo" id="gerador">
+        <h2>Crie seu estereograma</h2>
+        <p class="descricao">
+            Escolha um padrão e um mapa de profundidade
+            para criar sua própria ilusão 3D.
+        </p>
+
+        <div class="resultado">
+            <canvas id="magiceye"></canvas>
+        </div>
+
+        <div class="controles">
+            <label for="width">Largura</label>
+            <input id="width" type="text" value="1024">
+
+            <label for="height">Altura</label>
+            <input id="height" type="text" value="768">
+
+            <p>
+                <input id="invert" type="checkbox">
+                <label for="invert">Inverter profundidade</label>
+            </p>
+
+            <input
+                class="botao"
+                type="button"
+                onclick="run()"
+                value="Gerar estereograma">
+        </div>
+    </section>
+
+    <section class="conteudo" id="padroes">
+        <h2>Mapas de profundidade</h2>
+        <p class="descricao">
+            Selecione uma forma para definir a imagem escondida.
+        </p>
+
+        <form id="depthmap_group" class="galeria">
+            <label>
+                <input type="radio" name="selector" checked>
+                <img class="thumb" src="depthmaps/duck.jpg" alt="Pato">
+                <span>Pato</span>
+            </label>
+
+            <label>
+                <input type="radio" name="selector">
+                <img class="thumb" src="depthmaps/canyon.jpg" alt="Cânion">
+                <span>Cânion</span>
+            </label>
+
+            <label>
+                <input type="radio" name="selector">
+                <img class="thumb" src="depthmaps/diamond.gif" alt="Diamante">
+                <span>Diamante</span>
+            </label>
+
+            <label>
+                <input type="radio" name="selector">
+                <img class="thumb" src="depthmaps/squiggily.jpg" alt="Formas curvas">
+                <span>Formas curvas</span>
+            </label>
+
+            <label>
+                <input type="radio" name="selector">
+                <img class="thumb" src="depthmaps/fishes.jpg" alt="Peixes">
+                <span>Peixes</span>
+            </label>
+        </form>
+    </section>
+
+    <section class="conteudo">
+        <h2>Padrões visuais</h2>
+        <p class="descricao">
+            O padrão repetido é o que forma a textura do estereograma.
+        </p>
+
+        <form id="pattern_group" class="galeria">
+            <label>
+                <input type="radio" name="selector" checked>
+                <img class="thumb" src="patterns/cracked_ground.jpg" alt="Solo rachado">
+                <span>Solo rachado</span>
+            </label>
+
+            <label>
+                <input type="radio" name="selector">
+                <img class="thumb" src="patterns/repeating-star.png" alt="Estrelas">
+                <span>Estrelas</span>
+            </label>
+        </form>
+    </section>
+
+    <footer class="rodape">
+        <h3>ORBE</h3>
+        <p>Explore a profundidade escondida nas imagens.</p>
+        <p>Projeto educacional de Informática.</p>
+    </footer>
+
+</body>
+</html>
+
